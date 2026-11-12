@@ -102,7 +102,7 @@
       updateDeposit();
       const qrImg = dialog.querySelector("[data-booking-qr-img]");
       if (qrImg) {
-        const funny = "https://www.youtube.com/watch?v=6b_mrWQCztY";
+        const funny = "https://www.youtube.com/watch?v=V4PpzDyURqA";
         qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=" + encodeURIComponent(funny + "&tour=" + encodeURIComponent(currentPkg?.name || "ThaiLai"));
       }
     });

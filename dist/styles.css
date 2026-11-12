@@ -1198,3 +1198,46 @@ section, .experience, #lich-trinh, #nguon-tu-lieu { scroll-margin-top: 86px; }
   color: #d4e6cc !important;
   opacity: 1 !important;
 }
+
+
+/* Xem lịch (không tải file) */
+.schedule-dialog {
+  border: none;
+  border-radius: 14px;
+  padding: 0;
+  max-width: min(720px, 96vw);
+  width: 100%;
+  background: #0f1f18;
+  color: #fff;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+.schedule-dialog::backdrop { background: rgba(8,16,12,.6); }
+.schedule-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75rem 1rem;
+  background: #152b20;
+  border-radius: 14px 14px 0 0;
+  font-weight: 700;
+}
+.schedule-dialog-header .icon-button { color: #fff; }
+.schedule-dialog-body {
+  padding: .75rem;
+  display: grid;
+  gap: .65rem;
+  justify-items: center;
+}
+.schedule-dialog-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  background: #1a3326;
+}
+.schedule-hint {
+  margin: 0;
+  font-size: .88rem;
+  color: #c5d6b8;
+  text-align: center;
+}

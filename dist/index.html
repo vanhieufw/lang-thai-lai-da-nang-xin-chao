@@ -692,7 +692,7 @@
             <ol class="trip-stops" data-trip-stops hidden></ol>
             <div class="trip-actions" data-trip-actions hidden>
               <a class="button button-dark" data-trip-route target="_blank" rel="noopener"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg> Mở lộ trình</a>
-              <button class="button button-light" type="button" data-trip-download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-download"/></svg> Tải lịch</button>
+              <button class="button button-light" type="button" data-trip-download><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-camera"/></svg> Xem lịch</button>
               <button class="trip-reset" type="button" data-trip-reset>Bỏ chọn tất cả</button>
             </div>
           </div>
@@ -810,6 +810,20 @@
           <p class="order-ship muted" data-order-ship></p>
           <p class="muted small" data-order-note></p>
           <button type="button" class="button button-dark" data-close-order>Đóng</button>
+        </div>
+      </div>
+    </dialog>
+
+
+    <dialog id="schedule-dialog" class="schedule-dialog">
+      <div class="schedule-dialog-inner">
+        <header class="schedule-dialog-header">
+          <span>Lịch ghé Thái Lai</span>
+          <button type="button" class="icon-button" data-close-schedule aria-label="Đóng"><svg class="icon"><use href="#i-close"/></svg></button>
+        </header>
+        <div class="schedule-dialog-body">
+          <img data-schedule-img alt="Lịch ghé làng Thái Lai" />
+          <p class="schedule-hint">Giữ màn hình để chụp / lưu ảnh nếu cần.</p>
         </div>
       </div>
     </dialog>

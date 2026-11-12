@@ -24,7 +24,7 @@
   }
 
   // QR quét được - dẫn tới ảnh/video hài (classic)
-  const QR_TARGET = "https://www.youtube.com/watch?v=6b_mrWQCztY";
+  const QR_TARGET = "https://www.youtube.com/watch?v=V4PpzDyURqA";
   function qrImgUrl(data, size) {
     return "https://api.qrserver.com/v1/create-qr-code/?size=" + size + "x" + size + "&margin=8&data=" + encodeURIComponent(data);
   }

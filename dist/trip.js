@@ -133,7 +133,7 @@
   });
 
   /** Vẽ ảnh lịch đẹp và tải về PNG */
-  function downloadScheduleImage(chosen) {
+  function showScheduleImage(chosen) {
     const W = 1080;
     const headerH = 200;
     const rowH = 118;
@@ -245,18 +245,22 @@
     ctx.font = "600 22px system-ui, sans-serif";
     ctx.fillText("lang-thai-lai  ·  Check-in Thái Lai", 64, fy + 128);
 
-    canvas.toBlob((blob) => {
-      if (!blob) return;
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "Lich-ghe-lang-Thai-Lai.png";
-      document.body.append(link);
-      link.click();
-      link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1500);
-    }, "image/png");
+    const dataUrl = canvas.toDataURL("image/png");
+    const dialog = document.querySelector("#schedule-dialog");
+    const img = dialog?.querySelector("[data-schedule-img]");
+    if (img) {
+      img.src = dataUrl;
+      img.alt = "Lịch ghé làng Thái Lai - " + dateStr;
+    }
+    dialog?.showModal();
   }
+
+  document.querySelectorAll("[data-close-schedule]").forEach((btn) => {
+    btn.addEventListener("click", () => document.querySelector("#schedule-dialog")?.close());
+  });
+  document.querySelector("#schedule-dialog")?.addEventListener("click", (e) => {
+    if (e.target.id === "schedule-dialog") e.target.close();
+  });
 
   function roundRect(ctx, x, y, w, h, r) {
     ctx.beginPath();
@@ -271,7 +275,7 @@
   planner.querySelector("[data-trip-download]")?.addEventListener("click", () => {
     const chosen = getStops();
     if (!chosen.length) return;
-    downloadScheduleImage(chosen);
+    showScheduleImage(chosen);
   });
 
   window.addEventListener("storage", (event) => {
